@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+  a(href="/subscriber/") Back
+  h1 Add a new subscriber
+  form(action="/subscriber/", method="post")
+    div
+      label(for="email") Email address: 
+      input(id="email" name="email")
+    br
+    button(type="submit") Submit

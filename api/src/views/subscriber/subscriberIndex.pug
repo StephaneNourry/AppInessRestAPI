@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+  a(href="/") Back
+  h1 Subscribers
+  br
+  a(href="/subscriber/create") New subscriber
+  br
+  br
+  ul
+    each subscriber in subscribers
+      li
+        h3 Id: #{subscriber.id}
+        p Email: #{subscriber.email_address}
+        p Status: #{subscriber.status}
+        a(href="/subscriber/" + subscriber.id) View subscriber

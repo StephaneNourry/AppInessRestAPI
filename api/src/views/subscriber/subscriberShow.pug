@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  a(href="/subscriber/") Back
+  h1 Id: #{subscriber.id}
+  h3 Email: 
+  p #{subscriber.email_address}
+  h3 Status: 
+  p #{subscriber.status}
+  a(href="/subscriber/" + subscriber.id + "/edit") Edit
+  form(id="deleteform" action="/subscriber/" + subscriber.id + "/unsubscribe", method="post")
+    a(href="#" onclick="event.preventDefault(); this.parentNode.submit();") Unsubscribe

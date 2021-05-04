@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+  a(href="/contact/") Back
+  h1 Add a new contact
+  form(action="/contact/" + contact.id, method="post")
+    div
+      label(for="firstname") Firstname: 
+      input(id="firstname" name="firstname" value=contact.firstname)
+    br
+    div
+      label(for="lastname") Lastname: 
+      input(id="lastname" name="lastname" value=contact.lastname)
+    br
+    div
+      label(for="number") Phone number: 
+      input(id="number" name="number" value=contact.number)
+    br
+    div
+      label(for="email") Email address: 
+      input(id="email" name="email" value=contact.email)
+    br
+    button(type="submit") Submit

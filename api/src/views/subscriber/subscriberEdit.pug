@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+  a(href="/subscriber/" + subscriber.id) Back
+  h1 Add a new subscriber
+  form(action="/subscriber/" + subscriber.id, method="post")
+    div
+      label(for="email") Email address: 
+      input(id="email" name="email" value=subscriber.email_address)
+    br
+    div
+      label(for="status") Subscribed: 
+      input(type="checkbox" id="status" name="email" checked=subscriber.status = 'subscribed' ? false : true)
+    br
+    button(type="submit") Submit

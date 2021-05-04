@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  a(href="/") Back
+  h1 Contacts
+  br
+  a(href="/contact/create") New contact
+  br
+  br
+  ul
+    each contact in contacts
+      li
+        h3= contact.firstname + " " + contact.lastname
+        p Id: #{contact.id}
+        p Number: #{contact.number}
+        p Email: #{contact.email}
+        a(href="/contact/" + contact.id) View contact
