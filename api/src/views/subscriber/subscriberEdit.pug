@@ -10,6 +10,6 @@ block content
     br
     div
       label(for="status") Subscribed: 
-      input(type="checkbox" id="status" name="email" checked=subscriber.status = 'subscribed' ? false : true)
+      input(type="checkbox" id="status" name="status" checked=(subscriber.status == 'subscribed' ? true : false))
     br
     button(type="submit") Submit

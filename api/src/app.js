@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 
 const indexRouter = require('./routes/index');
-const contactRouter = require('./routes/contact');
+const messageRouter = require('./routes/message');
 const subscriberRouter = require('./routes/subscriber');
 
 // -- Allow cros origin requestes
@@ -40,7 +40,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // -- Routes
 
 app.use('/', indexRouter);
-app.use('/contact', contactRouter);
+app.use('/message', messageRouter);
 app.use('/subscriber', subscriberRouter);
 
 // -- Error handler

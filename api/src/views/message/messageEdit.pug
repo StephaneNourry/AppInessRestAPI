@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+  a(href="/message/") Back
+  h1 Add a new message
+  form(action="/message/" + message.id, method="post")
+    div
+      label(for="firstname") Firstname: 
+      input(id="firstname" name="firstname" value=message.firstname)
+    br
+    div
+      label(for="lastname") Lastname: 
+      input(id="lastname" name="lastname" value=message.lastname)
+    br
+    div
+      label(for="number") Message: 
+      textarea(id="message" name="message")=message.message
+    br
+    button(type="submit") Submit

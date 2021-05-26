@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  a(href="/") Back
+  h1= "Message from" + message.firstname + " " + message.lastname
+  h3 Id: 
+  p #{message.id}
+  h3 Message: 
+  p #{message.message}
+  a(href="/message/" + message.id + "/edit") Edit
+  form(id="deleteform" action="/message/" + message.id + "/delete", method="post")
+    a(href="#" onclick="event.preventDefault(); this.parentNode.submit();") Delete

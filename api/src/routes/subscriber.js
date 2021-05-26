@@ -88,7 +88,7 @@ router.get('/:id/edit', (req, res) => {
     
     axios.get(baseURL + req.params.id, requestHeaders)
     .then(data => {
-        console.log("data: ", data.data.members)
+        console.log("edit id data: ", data.data)
         res.render('subscriber/subscriberEdit', { 
             subscriber: data.data,
         });
@@ -105,8 +105,10 @@ router.post('/:id', (req, res) => {
     
     var dataToStore = {
         email_address: req.body.email,
-        status: req.body.status == true ? 'subscribed' : 'unsubscribed',
+        status: req.body.status == "on" ? 'subscribed' : 'unsubscribed',
     }
+
+    console.log("DATA TO STORE: ", dataToStore);
 
     axios.patch(baseURL + req.params.id, dataToStore, requestHeaders)
     .then(() => {
