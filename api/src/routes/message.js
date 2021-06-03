@@ -46,11 +46,6 @@ router.get('/create', (req, res) => {
 router.post('/', async (req, res) => {
     // store new message in db
 
-    // check id and params before
-    var idError = checkID(res, req.params.id);
-    if (idError)
-        return idError;
-
     var values = `('${req.body.firstname}', '${req.body.lastname}', '${req.body.message}')`
     pool.query("INSERT INTO messages (firstname, lastname, message) VALUES " + values, (error, result) => {
         if (error) {
